@@ -1,0 +1,59 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("MEEPCITY OP GUI", "Ocean")
+
+if game.PlaceId == 370731277 then
+-- MAIN
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+
+MainSection:NewButton("Back/Front Flip", "Click Z/X/C To Flip", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/7wDcPtLk'))()
+end)
+
+MainSection:NewButton("Infinite-Yield", "Admin Script", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+MainSection:NewToggle("Super-Human", "do you know", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 200
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 200
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+end)
+
+-- LocalPlayer
+
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+
+PlayerSection:NewSlider("WalkSpeed", "SPEED!!", 500, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewSlider("JumpPower", "JUMP HIGH!!", 500, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+PlayerSection:NewButton("Reset WS/JP", "Reset to all defaults", function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+
+--Other
+local Other = Window:NewTab("Other")
+local OtherSection = Other:NewSection("Other")
+
+OtherSection:NewButton("Chat Poofer", "Lets you chat for other people", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/djBfk8Li'))()
+end)
+
+OtherSection:NewButton("ByPass Fly", "Your mom mode XDD", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Nicuse/RobloxScripts//main/BypassedFly.lua'))()
+
+    Fly(true)
+end)
